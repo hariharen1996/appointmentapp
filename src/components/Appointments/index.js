@@ -12,17 +12,19 @@ class Appointments extends Component {
     const {title, date} = this.state
     const newDate = date ? format(new Date(date), 'dd MMMM yyyy, EEEE') : ''
 
-    const newApData = {
-      id: uuidv4(),
-      title,
-      date: newDate,
-      stars: false,
+    if (title !== '' && date !== '') {
+      const newApData = {
+        id: uuidv4(),
+        title,
+        date: newDate,
+        stars: false,
+      }
+      this.setState(prevState => ({
+        apData: [...prevState.apData, newApData],
+        title: '',
+        date: '',
+      }))
     }
-    this.setState(prevState => ({
-      apData: [...prevState.apData, newApData],
-      title: '',
-      date: '',
-    }))
   }
 
   starClicked = id => {

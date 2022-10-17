@@ -47,7 +47,7 @@
   padding: 5px 17px;
   border: 1px solid #b5b7b4;
   outline: none;
-  width: 250px;
+  max-width: 100%;
 }
 
 .label {
@@ -125,5 +125,8 @@
     margin-left: 20px;
     margin-right: 20px;
     padding-bottom: 20px;
+  }
+  .input {
+    max-width: 1500px;
   }
 }
